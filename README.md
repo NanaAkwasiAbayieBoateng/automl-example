@@ -58,30 +58,6 @@ A aplicação web usa o framework Flask. Para iniciar o ambiente de desenvolvime
 Acesse [http://localhost:5000](http://localhost:5000)
 
 
-# Deploy em produção
-
-O projeto já inclui os arquivos necessários para o deploy no Heroku. Estes arquivos são:
-
-- Procfile
-- run (bash)
-- runapp.py
-- production.ini
-
-Este modelo de deploy **não é o ideal**, mas é uma forma simples de colocar o projeto em produção. Considere usar uma estratégia de deployment mais apropriada como o uso de nginx/gunicorn.
-
-Para fazer o deploy (heroku):
-
-- Se quiser manter um registro das consultas feitas no sistema, habilite o uso do Cloudinary:
-  - Faça o cadastro no Cloudinary
-  - Insira suas credenciais no arquivo .env do heroku ([saiba mais](https://devcenter.heroku.com/articles/heroku-local#copy-heroku-config-vars-to-your-local-env-file))
-  - altere o parametro `use_cloudinary` no arquivo production.ini
-- Faça o deploy com o comando ([saiba mais](https://devcenter.heroku.com/articles/git)):
-```
-(env)$ git push heroku master
-```
- 
-O sistema automaticamente salvará as imagens e suas predições no Cloudinary se as credenciais estiverem presentes.
-
 # Contribuições
 
 Todas as contribuições são bem vindas! Não deixe de compartilhar dúvidas, sugestões, criticas e etc!
