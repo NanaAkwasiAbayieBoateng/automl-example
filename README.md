@@ -47,6 +47,15 @@ Agora é só instalar as dependências do projeto
 (env)$ python crawler.py -p "Grand Theft Auto V™ (GTA V)"
 ```
 
+Caso não queira esperar pelo processo de raspagem dos dados e treinamento do modelo, é possível baixar o modelo pré-treinado:
+
+- [Arquivo CSV](https://s3.amazonaws.com/automl-example/produtos.csv)
+- [Modelo Classificador](https://s3.amazonaws.com/automl-example/classifier.pkl)
+- [Modelo de Encoding](https://s3.amazonaws.com/automl-example/encoder_classifier.pkl)
+- [Modelo de Vetorização](https://s3.amazonaws.com/automl-example/vectorizer_classifier.pkl)
+
+Todos os modelos são necessários para a classificação.
+
 ## Subindo a aplicação web
 
 A aplicação web usa o framework Flask. Para iniciar o ambiente de desenvolvimento faça:
@@ -56,6 +65,16 @@ A aplicação web usa o framework Flask. Para iniciar o ambiente de desenvolvime
 ```
 
 Acesse [http://localhost:5000](http://localhost:5000)
+
+## Rodando os testes
+
+Para executar os testes da aplicação basta instalar as dependências e rodar os testes como abaixo:
+
+```
+(env)$ pip install -r test-requirements.txt
+
+(env)$ pytest tests
+```
 
 ## Solução de problemas
 
