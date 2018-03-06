@@ -133,7 +133,7 @@ def scraper(categs):
     data = []
     for categ, url in categs:
         print(categ)
-        jobs = [url % start for start in range(0, 50, 50)]
+        jobs = [url % start for start in range(0, 1000, 50)]
         urls_list = []
         
         with ThreadPoolExecutor(max_workers=15) as pool:
