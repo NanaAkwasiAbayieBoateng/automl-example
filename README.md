@@ -4,7 +4,7 @@ AutoML ou Automated Machine Learning é um campo novo de pesquisa que tem o obej
 
 Este projeto é um exemplo de aplicação de AutoML com a biblioteca [auto-sklearn](https://github.com/automl/auto-sklearn) que inclui um crawler para baixar dados de produtos e treinar o modelo e uma aplicação web que usa o modelo treinado para classificar dados de produtos.
 
-# Instalação
+## Instalação
 
 Consideramos que a instalação será feita em um "virtualenv"
 
@@ -27,7 +27,7 @@ Agora é só instalar as dependências do projeto
 (env)$ pip install -r requirements.txt
 ```
 
-# Baixando os dados e treinando o modelo
+## Baixando os dados e treinando o modelo
 
 - Apenas baixando os dados
 
@@ -47,7 +47,7 @@ Agora é só instalar as dependências do projeto
 (env)$ python crawler.py -p "Grand Theft Auto V™ (GTA V)"
 ```
 
-# Subindo a aplicação web
+## Subindo a aplicação web
 
 A aplicação web usa o framework Flask. Para iniciar o ambiente de desenvolvimento faça:
 
@@ -57,7 +57,19 @@ A aplicação web usa o framework Flask. Para iniciar o ambiente de desenvolvime
 
 Acesse [http://localhost:5000](http://localhost:5000)
 
+## Solução de problemas
 
-# Contribuições
+1. A instalação das dependências pode apresentar problemas em ambientes novos. Caso o comando `pip install` falhe:
+
+- Instale as bibliotecas numpy e Cython separadamente e após a instalação das mesmas rode o comando novamente
+
+```
+(env)$ pip install numpy Cython
+
+(env)$ pip install -r requirements.txt
+```
+
+
+## Contribuições
 
 Todas as contribuições são bem vindas! Não deixe de compartilhar dúvidas, sugestões, criticas e etc!
