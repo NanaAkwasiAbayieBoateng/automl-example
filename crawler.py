@@ -113,7 +113,7 @@ def predict(text, fit_file='classifier.pkl'):
     clf = joblib.load(fit_file)
     vectorizer = joblib.load('vectorizer_%s' % fit_file)
     encoder = joblib.load('encoder_%s' % fit_file)
-    
+
     text = pre_processor(text)
     text = vectorizer.transform([text])
     resp = clf.predict(text)[0]
@@ -135,7 +135,7 @@ def scraper(categs):
         print(categ)
         jobs = [url % start for start in range(0, 1000, 50)]
         urls_list = []
-        
+
         with ThreadPoolExecutor(max_workers=15) as pool:
             futures = pool.map(get_urls, jobs)
             for urls in futures:
@@ -151,7 +151,6 @@ categs = [
     ('brinquedo', 'https://lista.mercadolivre.com.br/brinquedos-hobbies/bonecos-figuras-acao/_Desde_%s'),
     ('maquiagem', 'https://lista.mercadolivre.com.br/beleza-cuidado-pessoal/maquiagem/_Desde_%s'),
     ('game', 'https://games.mercadolivre.com.br/video-games/_Desde_%s'),
-
 ]
 
 
@@ -190,12 +189,11 @@ if __name__ == '__main__':
         data = scraper(categs)
         print(len(data))
         save_dataset(data, dataset_file)
-    
+
     if dataset_file and should_train and not os.path.isfile(fit_file):
         df = prepare_data(dataset_file)
         train(df, fit_file)
-    
+
     if to_predict:
         resp = predict(to_predict, fit_file)
         print("Category: %s" % resp)
-  

@@ -5,7 +5,7 @@ from flask import request
 from flask import jsonify
 from flask import render_template
 
-from crawler2 import predict
+from crawler import predict
 
 
 app = Flask(__name__)
